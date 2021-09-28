@@ -8,24 +8,24 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "users")
+@Table(name = "author")
 public class UserEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "user_id")
+	@Column(name = "author_id")
 	private Integer id;
 	@Column(length = 20, nullable = false, unique = true)
-	private String userName;
+	private String authorName;
 	@Column(length = 50, nullable = false, unique = true)
 	private String email;
 	@Column(length = 8)
 	private String password;
 	
 	
-	public UserEntity(Integer id, String userName, String email, String password) {
+	public UserEntity(Integer id, String authorName, String email, String password) {
 		super();
 		this.id = id;
-		this.userName = userName;
+		this.authorName = authorName;
 		this.email = email;
 		this.password = password;
 	}
@@ -40,11 +40,11 @@ public class UserEntity {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getUserName() {
-		return userName;
+	public String getAuthorName() {
+		return authorName;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setAuthorName(String authorName) {
+		this.authorName = authorName;
 	}
 	public String getEmail() {
 		return email;
